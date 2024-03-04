@@ -1,0 +1,51 @@
+variable "instance_type"{
+  default="t2.micro"
+}
+
+variable "instance_ami" {
+  default="ami-0fa377108253bf620"
+}
+
+variable "instance_key" {
+  default= "terraform_key"
+}
+
+variable "instance_name" {
+  default="terraformInstance1"
+}
+
+variable "instance_sg" {
+  default="terraform_SG2"
+}
+
+variable "instance_vpc"{
+  default="vpc-0bfc24833013a1d8f"
+}
+
+variable "instance_s3bucket"{
+  default="anuj-terraform-bucket"
+}
+
+
+
+#04-03-2024
+
+variable "public_subnet_cidr"{
+  type = list(string)
+  description="public subnet cidr block"
+  default = ["10.0.1.0/24","10.0.2.0/24"]
+}
+
+variable "private_subnet_cidr"{
+  type =list(string)
+  description = "private subnet cidr block"
+  default = ["10.0.3.0/24", "10.0.4.0/24"]
+}
+
+
+variable "azs" {
+  type=list(string)
+  description= "Availability zones"
+  default=["ap-southeast-1a", "ap-southeast-1b"]
+}
+
