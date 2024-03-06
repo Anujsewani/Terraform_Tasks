@@ -49,3 +49,47 @@ variable "azs" {
   default=["ap-southeast-1a", "ap-southeast-1b"]
 }
 
+#variable "max_connection"{
+#  type=string
+#  default="1000"
+#}
+
+variable "engine"{
+  type = object({
+    name = string
+    version = string
+  })
+
+  default = {
+    name="mysql"
+    version="5.7"
+  }
+}
+
+variable "instance_class"{
+  default="db.t2.micro"
+}
+variable "storage" {
+  type = object({
+    allocated_storage = number
+    storage_type      = string
+  })
+
+  default = {
+    allocated_storage = 20
+    storage_type      = "gp2"
+  }
+}
+
+
+variable "dbusername"{
+  default="anuj"
+}
+variable "dbpassword"{
+  default="anuj123456"
+}
+
+variable "instances_to_detach"{
+  type=set(string)
+  default=["i-0cc2503a0f326f541","i-091fe3ed2974d2e24"]
+}
