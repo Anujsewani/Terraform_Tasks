@@ -89,7 +89,7 @@ variable "dbpassword"{
   default="anuj123456"
 }
 
-variable "instances_to_detach"{
-  type=set(string)
-  default=["i-0cc2503a0f326f541","i-091fe3ed2974d2e24"]
-}
+#variable "instances_to_detach"{
+#  type=list(string)
+#  default=["i-0fefbf4924faa63bd","i-05fef41ecb75542fc"]
+#}

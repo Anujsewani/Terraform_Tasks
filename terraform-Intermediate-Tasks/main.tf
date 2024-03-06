@@ -172,9 +172,9 @@ resource "aws_launch_configuration" "terraform_launch_config"{
 resource "aws_autoscaling_group" "terraform_autoscaling_group"{
   name="Terraform-ASG"
   launch_configuration=aws_launch_configuration.terraform_launch_config.name
-  min_size=0
-  max_size=3
-  desired_capacity=0
+  min_size=1
+  max_size=6
+  desired_capacity=4
   availability_zones=["ap-southeast-1a"]
   health_check_type="ELB"
   health_check_grace_period=120
